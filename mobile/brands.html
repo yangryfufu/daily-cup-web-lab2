@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="今日新杯：发现新杯、关注品牌、记录一杯日常。Web前端实验3移动端课程作品，使用虚构教学数据。">
+<meta name="theme-color" content="#f8f5ee">
+<title>品牌追踪 · 今日新杯 · 移动端</title>
+<link rel="icon" type="image/svg+xml" href="res/favicon.svg">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/mobile.css">
+<script src="js/data.js" defer>
+</script>
+<script src="js/app.js" defer>
+</script>
+</head>
+<body data-page="brands">
+<a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header"><div class="container header-inner">
+    <a class="wordmark" href="index.html" aria-label="今日新杯，返回首页"><span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h13l-1 14H6L5 7Zm2-4h9M9 3l1 4m3-4-1 4M18 9h2v5h-3"/></svg></span><span>今日新杯<small>DAILY CUP JOURNAL</small></span></a>
+    <a class="header-save" href="journal.html?new=1" aria-label="记录一杯"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>记一杯</span></a></div></header>
+<main id="main">
+<section class="page-intro container">
+<div>
+<p class="eyebrow">FOLLOW YOUR TASTE</p>
+<h1>关注喜欢的味道。</h1>
+<p class="intro-copy">关注你喜欢的品牌，把值得期待的新杯聚在一起。</p>
+</div>
+</section>
+<section class="container section compact-section">
+<div class="toolbar">
+<label class="search-box">
+<svg class="icon " viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="10.5" cy="10.5" r="6.5"/>
+<path d="m16 16 5 5"/>
+</svg>
+<input id="brand-search" type="search" maxlength="40" placeholder="搜索示例品牌" aria-label="搜索品牌">
+</label>
+<div class="filter-pills" role="group" aria-label="品牌范围">
+<button class="active" data-brand-filter="all" aria-pressed="true">全部品牌</button>
+<button data-brand-filter="followed" aria-pressed="false">我的关注 <span data-follow-count>0</span>
+</button>
+</div>
+</div>
+<div id="brand-grid" class="brand-grid">
+</div>
+<div class="section-heading brand-feed-heading">
+<div>
+<p class="eyebrow">FROM YOUR FAVORITES</p>
+<h2 id="brand-feed-title">品牌上新手记</h2>
+</div>
+<button id="show-all-brands" class="text-link" type="button" hidden>查看全部品牌 ↗</button>
+</div>
+<div id="brand-release-grid" class="release-grid four-col">
+</div>
+<p class="data-note">本页四个品牌均为虚构教学示例，名称和插画仅用于练习页面布局。</p>
+</section>
+</main>
+<footer class="mobile-footer"><p>今日新杯 · 把日常慢慢收藏</p><small>教学演示作品 · 数据仅保存在当前浏览器</small></footer><nav class="bottom-nav" aria-label="主要导航"><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/></svg><span>上新</span></a><a href="brands.html" class="active" aria-current="page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4v10l-8 4-8-4V7l8-4Zm0 0v18M4 7l8 4 8-4"/></svg><span>品牌</span></a><a href="journal.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 0v18m4-13h6m-6 4h6"/></svg><span>手账</span></a><a href="reminders.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16h14l-2-3V9a5 5 0 0 0-10 0v4l-2 3Zm4 4h6"/></svg><span>想喝</span></a><a href="profile.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>我的</span></a></nav>
+<dialog id="entry-dialog" class="modal" aria-labelledby="entry-dialog-title">
+ <form id="entry-form" class="entry-form">
+  <div class="modal-heading">
+<div>
+<p class="eyebrow">A NEW PAGE</p>
+<h2 id="entry-dialog-title">记下这一杯</h2>
+</div>
+<button type="button" class="icon-button" data-close-dialog aria-label="关闭记录窗口">
+<svg class="icon " viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="m6 6 12 12M6 18 18 6"/>
+</svg>
+</button>
+</div>
+  <p class="muted">留住味道，也留住今天的心情。</p>
+  <input type="hidden" name="recordId">
+  <div class="form-row">
+<label>饮品名称<input name="title" required maxlength="40" placeholder="例如：桂花乌龙鲜奶">
+</label>
+<label>品牌<input name="brand" required maxlength="24" placeholder="这杯来自哪里">
+</label>
+</div>
+  <div class="form-row">
+<label>记录日期<input type="date" name="date" required min="2000-01-01" max="2100-12-31">
+</label>
+<label>心情<select name="mood">
+<option value="开心">开心</option>
+<option value="治愈">治愈</option>
+<option value="满足">满足</option>
+<option value="平静">平静</option>
+</select>
+</label>
+</div>
+  <label>一杯小记<textarea name="note" rows="3" maxlength="300" placeholder="今天这杯，有什么值得记住的？">
+</textarea>
+</label>
+  <label class="upload-label">
+<svg class="icon " viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="5" width="18" height="15" rx="3"/>
+<circle cx="8" cy="10" r="1"/>
+<path d="m4 18 5-5 4 4 4-6 4 6"/>
+</svg>
+<span>添加照片 <small>JPG / PNG / WebP，最大8MB</small>
+</span>
+<input id="entry-photo" type="file" accept="image/jpeg,image/png,image/webp">
+</label>
+  <img id="photo-preview" class="photo-preview" alt="待保存的手账照片预览" hidden>
+  <p class="form-help">手动填写，照片与文字仅保存在当前浏览器。本实验未接入AI识别。</p>
+  <p id="form-error" class="form-error" role="alert" hidden>
+</p>
+  <div class="modal-actions">
+<button type="button" class="button secondary" data-close-dialog>取消</button>
+<button class="button" type="submit">保存这一杯 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</div>
+ </form>
+</dialog>
+<dialog id="confirm-dialog" class="modal compact" aria-labelledby="confirm-title">
+<form method="dialog">
+<p class="eyebrow">PLEASE CONFIRM</p>
+<h2 id="confirm-title">确认操作</h2>
+<p id="confirm-description" class="muted">
+</p>
+<div class="modal-actions">
+<button class="button secondary" value="cancel">取消</button>
+<button class="button" value="confirm">确认</button>
+</div>
+</form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden>
+</div>
+<noscript>
+<p class="noscript">请启用JavaScript以使用日历筛选和本地手账，页面导航仍可直接使用。</p>
+</noscript>
+</body>
+</html>
